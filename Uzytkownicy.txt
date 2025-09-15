@@ -1,2 +1,6 @@
 1|Justyna|123|
 2|Magda|4567|
+1|Justyna|567|
+2|Dominik|678|
+3|Marta|345|
+4|Kuba|3457|

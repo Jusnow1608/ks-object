@@ -66,3 +66,8 @@ for (int i=0;i<uzytkownicy.size();i++)
 }
 }
 
+void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
+
