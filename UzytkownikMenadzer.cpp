@@ -58,6 +58,7 @@ return false;
 
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
+//int rozmiar = uzytkownicy.size();
 for (int i=0;i<uzytkownicy.size();i++)
 {
     cout<<uzytkownicy[i].pobierzId()<<endl;

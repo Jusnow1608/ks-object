@@ -16,7 +16,7 @@ class PlikZUzytkownikami
     const string nazwaPlikuZUzytkownikami;
     bool czyPlikJestPusty();
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-    Uzytkownik pobierzDaneUzytkownika(string dawaneJednegoUzytkownikaOddzielonePionowymiKreskami);//dodana metoda
+    Uzytkownik pobierzDaneUzytkownika(string dawaneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
 
@@ -25,8 +25,6 @@ public:
 };
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku ();
-
-
 };
 
 #endif
