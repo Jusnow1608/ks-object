@@ -45,7 +45,8 @@ int UzytkownikMenadzer::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenadzer::czyIstniejeLogin(string login)
 {
-    for (int i=0; i<uzytkownicy.size(); i++)
+    int liczbaUzytkownikow = uzytkownicy.size();
+    for (int i=0; i<liczbaUzytkownikow; i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
@@ -59,8 +60,8 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
 
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
-
-    for (int i=0; i<uzytkownicy.size(); i++)
+    int liczbaUzytkownikow = uzytkownicy.size();
+    for (int i=0; i<liczbaUzytkownikow; i++)
     {
         cout<<uzytkownicy[i].pobierzId()<<endl;
         cout<<uzytkownicy[i].pobierzLogin()<<endl;
@@ -75,58 +76,57 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 
 void UzytkownikMenadzer::logowanieUzytkownika()
 {
-    Uzytkownik uzytkownik;
     string login = "", haslo = "";
-
     cout << endl << "Podaj login: ";
     cin>>login;
-    uzytkownik.ustawLogin(login);
-
     for (int i=0; i<uzytkownicy.size(); i++)
+    {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 cin>>haslo;
-                uzytkownik.ustawHaslo(haslo);
 
-                if (czyUzytkownikZalogowany(login, haslo))
+                if(czyUzytkownikZalogowany(login, haslo)==true)
                 {
                     idZalogowanegoUzytkownika = pobierzIdZalogowanegoUzytkownika (login);
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    cout<<idZalogowanegoUzytkownika<<endl;
                     system("pause");
-
                     return ;
-
                 }
             }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return ;
         }
+    }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
 }
 
 bool UzytkownikMenadzer::czyUzytkownikZalogowany(string login, string haslo)
 {
-    for (int i=0; i<uzytkownicy.size(); i++)
+    int liczbaUzytkownikow = uzytkownicy.size();
+    for (int i=0; i<liczbaUzytkownikow; i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login && uzytkownicy[i].pobierzHaslo()==haslo)
         {
             return true;
         }
-        return false;
     }
+    return false;
 }
 
 int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(string login)
 {
-for (int i=0; i<uzytkownicy.size(); i++)
+    int liczbaUzytkownikow = uzytkownicy.size();
+    for (int i=0; i<liczbaUzytkownikow; i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
             return uzytkownicy[i].pobierzId();
         }
-        return 0;
     }
+    return 0;
 }
