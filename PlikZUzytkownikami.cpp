@@ -44,7 +44,7 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 
     return liniaZDanymiUzytkownika;
 }
-//odtąd zmiany
+
 vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 {
     fstream plikTekstowy;

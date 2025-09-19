@@ -24,13 +24,18 @@ class UzytkownikMenadzer
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
+    bool czyUzytkownikZalogowany(string login, string haslo);
 
 
 public:
-    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+    };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    void logowanieUzytkownika();
+    int pobierzIdZalogowanegoUzytkownika(string login);
 };
 
 #endif
