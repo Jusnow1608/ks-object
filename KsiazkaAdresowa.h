@@ -18,7 +18,8 @@ KsiazkaAdresowa(string nazwaPlikuZUzytkownikami):uzytkownikMenadzer (nazwaPlikuZ
     };
 void rejestracjaUzytkownika();
 void wypiszWszystkichUzytkownikow();
-int logowanieUzytkownika();
+void logowanieUzytkownika();
+void zmianaHaslaZalogowanegoUzytkownika ();
 };
 
 #endif
