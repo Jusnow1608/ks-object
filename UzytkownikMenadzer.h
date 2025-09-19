@@ -36,6 +36,7 @@ public:
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika(string login);
+    void zmianaHaslaZalogowanegoUzytkownika ();
 };
 
 #endif

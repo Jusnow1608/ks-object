@@ -1,10 +1,2 @@
 1|Justyna|123|
-2|Magda|789|
-3|Dominik|dfg|
-4|Mariusz|1234|
-5|Marta|1234|
-6|Michal|123|
-7|Anna|1234|
-8|Beata|12345|
-9|Barbara|0000|
-10|Gosia|1234|
+2|Kamil|6878|
