@@ -33,6 +33,7 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
         return true;
     else
         return false;
+    plikTekstowy.close();
 }
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
@@ -63,9 +64,9 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
             uzytkownicy.push_back(uzytkownik);
         }
 
-    plikTekstowy.close();
+        plikTekstowy.close();
     }
-return uzytkownicy;
+    return uzytkownicy;
 }
 
 Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami)
@@ -103,7 +104,6 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 
 void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector<Uzytkownik>& uzytkownicy)
 {
-    Uzytkownik uzytkownik;
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
 
@@ -111,19 +111,15 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector<Uzytkownik>&
 
     if (plikTekstowy.good() == true)
     {
-       for (int i = 0; i<uzytkownicy.size();i++)
-       {
-            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
-           if(i==uzytkownicy.size()-1)
-           {
-               plikTekstowy << liniaZDanymiUzytkownika;
-            }
-            else
-            {
-                plikTekstowy << liniaZDanymiUzytkownika << endl;
-            }
-            liniaZDanymiUzytkownika = "";
-       }}
+        for (int i = 0; i<uzytkownicy.size(); i++)
+        {
+            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
+            plikTekstowy << liniaZDanymiUzytkownika;
+
+            if (i!=uzytkownicy.size()-1)
+                plikTekstowy << endl;
+        }
+    }
     else
     {
         cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;

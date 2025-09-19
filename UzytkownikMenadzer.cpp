@@ -148,5 +148,5 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
             break;
         }
     }
- //plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+ plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
