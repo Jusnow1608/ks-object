@@ -1,5 +1,8 @@
 #include "UzytkownikMenadzer.h"
 
+UzytkownikMenadzer::UzytkownikMenadzer(string nazwaPlikuZUzytkownikami): plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+    };
 
 void UzytkownikMenadzer::rejestracjaUzytkownika()
 {
@@ -134,6 +137,12 @@ int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(string login)
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
 {
+    if (idZalogowanegoUzytkownika == 0)
+    {
+        cout<<"Brak zalogowanego uzytkownika."<<endl;
+        system("pause");
+        return;
+    }
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     cin >> noweHaslo;
