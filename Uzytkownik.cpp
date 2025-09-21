@@ -13,6 +13,7 @@ void Uzytkownik::ustawLogin (string nowyLogin)
 }
 void Uzytkownik::ustawHaslo (string noweHaslo)
 {
+    if(noweHaslo!="")
     haslo=noweHaslo;
 }
 
