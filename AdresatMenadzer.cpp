@@ -27,8 +27,8 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idOstatniegoAdresata)
     Adresat adresat;
     string imie, nazwisko, numerTelefonu, email, adres;
 
-    adresat.ustawId (++idOstatniegoAdresata);
-
+    idOstatniegoAdresata++;
+    adresat.ustawId (idOstatniegoAdresata);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
@@ -42,7 +42,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idOstatniegoAdresata)
     adresat.ustawNazwisko (nazwisko);
 
     cout << "Podaj numer telefonu: ";
-    cin>>numerTelefonu;
+    numerTelefonu = MetodyPomocnicze::wczytajLinie();
     adresat.ustawNumerTelefonu (numerTelefonu);
 
     cout << "Podaj email: ";
@@ -50,7 +50,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idOstatniegoAdresata)
     adresat.ustawEmail (email);
 
     cout << "Podaj adres: ";
-    cin>>adres;
+    adres = MetodyPomocnicze::wczytajLinie();
     adresat.ustawAdres (adres);
 
     return adresat;
@@ -61,11 +61,9 @@ void AdresatMenadzer::pobierzAdresatowZalogowanegoUzytkownikaZPliku()
     adresaci = plikZAdresatami.pobierzAdresatowZalogowanegoUzytkownikaZPliku();
 }
 
-
 void AdresatMenadzer::wypiszWszystkichAdresatow()
 {
-    int liczbaAdresatow = adresaci.size();
-    for (int i=0; i<liczbaAdresatow; i++)
+    for (size_t i=0; i<adresaci.size(); i++)
     {
         cout<<adresaci[i].pobierzId()<<endl;
         cout<<adresaci[i].pobierzIdUzytkownika()<<endl;

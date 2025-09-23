@@ -17,3 +17,10 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
     }
     return tekst;
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string wejscie = "";
+    getline(cin >> ws, wejscie);
+    return wejscie;
+}
