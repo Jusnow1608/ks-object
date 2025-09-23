@@ -44,8 +44,7 @@ int UzytkownikMenadzer::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenadzer::czyIstniejeLogin(string login)
 {
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
+    for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
@@ -59,8 +58,7 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
 
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
+    for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         cout<<uzytkownicy[i].pobierzId()<<endl;
         cout<<uzytkownicy[i].pobierzLogin()<<endl;
@@ -78,8 +76,7 @@ void UzytkownikMenadzer::logowanieUzytkownika()
     string login = "", haslo = "";
     cout << "Podaj login: ";
     cin>>login;
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
+    for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
@@ -105,55 +102,22 @@ void UzytkownikMenadzer::logowanieUzytkownika()
     system("pause");
 }
 
-/*bool UzytkownikMenadzer::czyUzytkownikZalogowany(string login, string haslo)
-{
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
-    {
-        if (uzytkownicy[i].pobierzLogin()==login && uzytkownicy[i].pobierzHaslo()==haslo)
-        {
-            return true;
-        }
-    }
-    return false;
-}*/
-
-/*int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(string login)
-{
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
-    {
-        if (uzytkownicy[i].pobierzLogin()==login)
-        {
-            return uzytkownicy[i].pobierzId();
-        }
-    }
-    return 0;
-}*/
-
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
 {
-    if (idZalogowanegoUzytkownika == 0)
-    {
-        cout<<"Brak zalogowanego uzytkownika."<<endl;
-        system("pause");
-        return;
-    }
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     cin >> noweHaslo;
-    int liczbaUzytkownikow = uzytkownicy.size();
-    for (int i=0; i<liczbaUzytkownikow; i++)
+    for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId()==idZalogowanegoUzytkownika)
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
-            cout << "Haslo zostalo zmienione." << endl << endl;
-            system("pause");
             break;
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    cout << "Haslo zostalo zmienione." << endl << endl;
+    system("pause");
 }
 
 int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()

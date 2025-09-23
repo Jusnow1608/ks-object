@@ -33,9 +33,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     void logowanieUzytkownika();
-    int pobierzIdZalogowanegoUzytkownika(string login);
     void zmianaHaslaZalogowanegoUzytkownika ();
-    bool czyUzytkownikZalogowany(string login, string haslo);
     void ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika);
      int pobierzIdZalogowanegoUzytkownika();
 };

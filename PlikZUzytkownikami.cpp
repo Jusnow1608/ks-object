@@ -73,9 +73,9 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     Uzytkownik uzytkownik;
     string pojedynczaDanaUzytkownika = "";
     int numerPojedynczejDanejUzytkownika = 1;
-    int dlugosc = daneJednegoUzytkownikaOddzielonePionowymiKreskami.length();
+    int IloscZnakowWLinii = daneJednegoUzytkownikaOddzielonePionowymiKreskami.length();
 
-    for (int pozycjaZnaku = 0; pozycjaZnaku < dlugosc; pozycjaZnaku++)
+    for (int pozycjaZnaku = 0; pozycjaZnaku < IloscZnakowWLinii; pozycjaZnaku++)
     {
         if (daneJednegoUzytkownikaOddzielonePionowymiKreskami[pozycjaZnaku] != '|')
         {
@@ -108,7 +108,6 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 
     if (plikTekstowy.good() == true)
     {
-
         for (size_t i = 0; i<uzytkownicy.size(); i++)
         {
             string liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);

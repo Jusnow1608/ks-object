@@ -68,9 +68,10 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 {
     Adresat adresat;
     string pojedynczaDanaAdresata = "";
+    int IloscZnakowWLinii = daneAdresataOddzielonePionowymiKreskami.length();
     int numerPojedynczejDanejAdresata = 1;
 
-    for (int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
+    for (int pozycjaZnaku = 0; pozycjaZnaku < IloscZnakowWLinii; pozycjaZnaku++)
     {
         if (daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku] != '|')
         {
@@ -122,8 +123,8 @@ bool PlikZAdresatami::czyPlikJestPusty()
 
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
-    std::ifstream plik(NAZWA_PLIKU_Z_ADRESATAMI);
-    std::string linia;
+    ifstream plik(NAZWA_PLIKU_Z_ADRESATAMI);
+    string linia;
     int ostatnieId = 0;
 
     while (getline(plik, linia))
