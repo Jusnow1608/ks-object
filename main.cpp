@@ -14,8 +14,8 @@ int main()
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+    //ksiazkaAdresowa.dodajAdresata();
+    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
     return 0;
 }

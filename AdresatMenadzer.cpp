@@ -70,7 +70,6 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
         cout << "-----------------------------------------------" << endl;
         for (size_t i=0; i<adresaci.size(); i++)
         {
-            if(adresaci[i].pobierzIdUzytkownika() == idZalogowanegoUzytkownika)
             wyswietlDaneAdresata(adresaci[i]);
         }
         cout << endl;
