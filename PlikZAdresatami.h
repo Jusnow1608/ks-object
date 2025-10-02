@@ -14,6 +14,7 @@ class PlikZAdresatami
 {
     const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
+    int idZalogowanegoUzytkownika;
 
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
@@ -24,7 +25,7 @@ public:
     {
     };
     void dopiszAdresataDoPliku(Adresat adresat);
-    vector <Adresat> pobierzAdresatowZalogowanegoUzytkownikaZPliku();
+    vector <Adresat> pobierzAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
 };
 

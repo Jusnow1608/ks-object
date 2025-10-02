@@ -53,6 +53,8 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
     vector <Uzytkownik> uzytkownicy;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
 
+   // ifstream plikTekstowy (NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
+
     plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
@@ -104,15 +106,15 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 
 void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> & uzytkownicy)
 {
-    ofstream plikTekstowy (NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
-
+   // ofstream plikTekstowy (NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
+    fstream plikTekstowy;
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::out);
     if (plikTekstowy.good() == true)
     {
         for (size_t i = 0; i<uzytkownicy.size(); i++)
         {
             string liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
             plikTekstowy << liniaZDanymiUzytkownika;
-
             if (i != uzytkownicy.size()-1)
                 plikTekstowy << endl;
         }

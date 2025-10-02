@@ -109,7 +109,7 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     cin >> noweHaslo;
     for (size_t i=0; i<uzytkownicy.size(); i++)
     {
-        if (uzytkownicy[i].pobierzId()==idZalogowanegoUzytkownika)
+        if (uzytkownicy[i].pobierzId()== idZalogowanegoUzytkownika)
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
             break;
