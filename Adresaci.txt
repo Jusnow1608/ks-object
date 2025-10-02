@@ -1,7 +1,9 @@
-1|1|Justyna|Nowak|518740960|justyna.nowak50@wp.pl|Mulinowicza|
-2|1|Dominik|Szrajnert|5656787968|dszra@wp.pl|Mulinowicza|
-3|2|Michal|Kowalski|6543287654|dsdfsc@wp.pl|Mulinowicza|
-4|1|Magda|Nowak|765487654|magda@wp.pl|dom|
-5|3|Gosia|B•bel| 3453 46|j@rm.pl||
-6|4|Dorota|Nowak| 7654 |jsdffbn| Kr¢lewska 18, Radziechowice Drugie|
-7|1|Justyna|Nowak|654 654 433|j@ssxkn|ul. Marszaàkowska 19, à¢d´ 93-334|
+1|1|Justyna|T5r4e|r4e3|tgrfew|tgrfedw|
+2|1|Justyna|Ytre|ytrew|hygtre|ytre|
+3|4|Beata|3456|ytr|543|54|
+4|1|Tomek|Gf|re|re|re|
+5|3|Marta|Ytr4|gtrfe|gtrfe|gtrfebg|
+6|1|A|C|g|5|rf|
+7|1|Barbara|Nowak|3456 655 6545|gegfd@wp.pl|Radiechowice Drugie, ul. Kr¢lewska 55, 97-561 ùadzice|
+8|4|Marlena|Kowalska|567 665 334|fhnigs@wp.pl|ul. Mulinowicza 19, m. 35, ù¢d´ 93-334|
+9|2|Justyna|Nowak-szrajnert|518 740 960|justyna.nowak50@wp.pl|ul. Kr¢tka 19/25, ù¢d´ 93-334|

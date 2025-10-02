@@ -1,5 +1,6 @@
 #include "KsiazkaAdresowa.h"
 
+
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
     uzytkownikMenadzer.rejestracjaUzytkownika();
@@ -18,7 +19,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
 
     adresatMenadzer.ustawIdZalogowanegoUzytkownika(id);
 
-    adresatMenadzer.pobierzAdresatowZalogowanegoUzytkownikaZPliku();
+    adresatMenadzer.pobierzAdresatowZalogowanegoUzytkownikaZPliku(id);
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -31,9 +32,9 @@ void KsiazkaAdresowa::dodajAdresata()
     adresatMenadzer.dodajAdresata();
 }
 
-void KsiazkaAdresowa::wypiszWszystkichAdresatow()
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatMenadzer.wypiszWszystkichAdresatow();
+adresatMenadzer.wyswietlWszystkichAdresatow();
 }
 
 

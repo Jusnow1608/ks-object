@@ -24,8 +24,7 @@ void wypiszWszystkichUzytkownikow();
 void logowanieUzytkownika();
 void zmianaHaslaZalogowanegoUzytkownika();
 void dodajAdresata();
-void wypiszWszystkichAdresatow();
-
+void wyswietlWszystkichAdresatow();
 };
 
 #endif
