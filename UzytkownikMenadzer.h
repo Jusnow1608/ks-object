@@ -37,6 +37,7 @@ public:
     void ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
+    bool czyUzytkownikZalogowany();
 };
 
 #endif

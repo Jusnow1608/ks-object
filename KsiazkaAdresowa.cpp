@@ -29,12 +29,28 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 
 void KsiazkaAdresowa::dodajAdresata()
 {
-    adresatMenadzer.dodajAdresata();
+    if(uzytkownikMenadzer.czyUzytkownikZalogowany()==true)
+    {
+        adresatMenadzer.dodajAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, musisz byc zalogowany." << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-    adresatMenadzer.wyswietlWszystkichAdresatow();
+    if(uzytkownikMenadzer.czyUzytkownikZalogowany()==true)
+    {
+        adresatMenadzer.wyswietlWszystkichAdresatow();
+    }
+    else
+    {
+        cout << "Aby wyswietlic adresatow, musisz byc zalogowany." << endl;
+        system("pause");
+    }
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika()
