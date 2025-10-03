@@ -90,3 +90,10 @@ void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
+
+void AdresatMenadzer::wyczyscAdresatow()
+{
+    adresaci.clear();
+    idOstatniegoAdresata = 0;
+}
+

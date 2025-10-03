@@ -124,3 +124,23 @@ int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
+
+void UzytkownikMenadzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    cout<<"Zostales wylogowany."<<endl;
+    system("pause");
+}
+
+bool UzytkownikMenadzer::czyUzytkownikZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}

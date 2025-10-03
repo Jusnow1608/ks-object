@@ -3,23 +3,23 @@
 
 void Uzytkownik::ustawId (int noweId)
 {
-   if(noweId >= 0)
-    id = noweId;
+    if(noweId >= 0)
+        id = noweId;
 }
 void Uzytkownik::ustawLogin (string nowyLogin)
 {
     if(nowyLogin!="")
-    login = nowyLogin;
+        login = nowyLogin;
 }
 void Uzytkownik::ustawHaslo (string noweHaslo)
 {
     if(noweHaslo!="")
-    haslo=noweHaslo;
+        haslo=noweHaslo;
 }
 
 int Uzytkownik::pobierzId()
 {
-return id;
+    return id;
 }
 
 string Uzytkownik::pobierzLogin()
