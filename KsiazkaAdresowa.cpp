@@ -34,7 +34,14 @@ void KsiazkaAdresowa::dodajAdresata()
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
-adresatMenadzer.wyswietlWszystkichAdresatow();
+    adresatMenadzer.wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::wylogowanieUzytkownika()
+{
+    uzytkownikMenadzer.wylogowanieUzytkownika();
+
+    adresatMenadzer.wyczyscAdresatow();
 }
 
 

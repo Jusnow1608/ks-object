@@ -19,6 +19,7 @@ class AdresatMenadzer
 
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata);
     void wyswietlDaneAdresata(Adresat adresat);
+        void wyczyscAdresatow();
 
     public:
     AdresatMenadzer(string nazwaPlikuZAdresatami): plikZAdresatami(nazwaPlikuZAdresatami)

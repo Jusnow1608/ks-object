@@ -25,6 +25,7 @@ void logowanieUzytkownika();
 void zmianaHaslaZalogowanegoUzytkownika();
 void dodajAdresata();
 void wyswietlWszystkichAdresatow();
+void wylogowanieUzytkownika();
 };
 
 #endif
