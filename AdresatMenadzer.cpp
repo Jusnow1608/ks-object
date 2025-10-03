@@ -14,6 +14,7 @@ void AdresatMenadzer::dodajAdresata()
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    cout << "-----------------------------------------------" << endl;
     adresat = podajDaneNowegoAdresata(idOstatniegoAdresata);
 
     adresaci.push_back(adresat);

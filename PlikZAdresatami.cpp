@@ -6,7 +6,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
-    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);//zapis, dopisywanie na koncu
 
     if (plikTekstowy.good() == true)
     {
@@ -43,13 +43,14 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 
     return liniaZDanymiAdresata;
 }
+
 vector <Adresat> PlikZAdresatami::pobierzAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     fstream plikTekstowy;
     vector <Adresat> adresaci;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
 
-    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);//otwarcie pliku w trybie do odczytu
 
     if (plikTekstowy.good() == true)
     {
@@ -59,7 +60,6 @@ vector <Adresat> PlikZAdresatami::pobierzAdresatowZalogowanegoUzytkownikaZPliku(
             if(adresat.pobierzIdUzytkownika() == idZalogowanegoUzytkownika)
                 adresaci.push_back(adresat);
         }
-
         plikTekstowy.close();
     }
     return adresaci;
@@ -113,29 +113,36 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
 
 bool PlikZAdresatami::czyPlikJestPusty()
 {
-    ifstream plikTekstowy(NAZWA_PLIKU_Z_ADRESATAMI);
+    ifstream plikTekstowy;
+
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+
     if (!plikTekstowy.is_open())
         return true;
+
     plikTekstowy.seekg(0, ios::end);
     bool pusty = (plikTekstowy.tellg() == 0);
+
     plikTekstowy.close();
     return pusty;
 }
 
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
-    ifstream plik(NAZWA_PLIKU_Z_ADRESATAMI);
-    string linia;
-    int ostatnieId = 0;
+    ifstream plikTekstowy;
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
 
-    while (getline(plik, linia))
+    string linia;
+    int ostatnieIdAdresata = 0;
+
+    while (getline(plikTekstowy, linia))
     {
         Adresat adresat = pobierzDaneAdresata(linia);
-        if (adresat.pobierzId() > ostatnieId)
-            ostatnieId = adresat.pobierzId();
+        if (adresat.pobierzId() > ostatnieIdAdresata)
+            ostatnieIdAdresata = adresat.pobierzId();
     }
 
-    plik.close();
-    return ostatnieId;
+    plikTekstowy.close();
+    return ostatnieIdAdresata;
 }
 
