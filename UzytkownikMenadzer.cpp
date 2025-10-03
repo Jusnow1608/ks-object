@@ -2,6 +2,8 @@
 
 void UzytkownikMenadzer::rejestracjaUzytkownika()
 {
+    cout << "             >>> REJESTRACJA <<<" << endl;
+    cout << "-----------------------------------------------" << endl;
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
@@ -64,6 +66,7 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
         cout<<uzytkownicy[i].pobierzLogin()<<endl;
         cout<<uzytkownicy[i].pobierzHaslo()<<endl;
     }
+    system ("pause");
 }
 
 void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
@@ -73,6 +76,8 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 
 void UzytkownikMenadzer::logowanieUzytkownika()
 {
+    cout << "             >>> LOGOWANIE <<<" << endl;
+    cout << "-----------------------------------------------" << endl;
     string login = "", haslo = "";
     cout << "Podaj login: ";
     cin>>login;
@@ -104,6 +109,8 @@ void UzytkownikMenadzer::logowanieUzytkownika()
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
 {
+     cout << "             >>> ZMIANA HASLA <<<" << endl;
+    cout << "-----------------------------------------------" << endl;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
     cin >> noweHaslo;
@@ -142,5 +149,4 @@ bool UzytkownikMenadzer::czyUzytkownikZalogowany()
     {
         return false;
     }
-
 }

@@ -26,13 +26,18 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
-    ifstream plikTekstowy(NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
+    ifstream plikTekstowy;
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
+
     if (!plikTekstowy.is_open())
         return true;
+
     plikTekstowy.seekg(0, ios::end);
     bool pusty = (plikTekstowy.tellg() == 0);
+
     plikTekstowy.close();
-    return pusty;
+    return pusty;// true jeœli plik ma 0 bajtów
+
 }
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
@@ -53,8 +58,6 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
     vector <Uzytkownik> uzytkownicy;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
 
-    // ifstream plikTekstowy (NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
-
     plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
@@ -64,7 +67,6 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
             uzytkownicy.push_back(uzytkownik);
         }
-
         plikTekstowy.close();
     }
     return uzytkownicy;
@@ -106,9 +108,8 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 
 void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> & uzytkownicy)
 {
-    // ofstream plikTekstowy (NAZWA_PLIKU_Z_UZYTKOWNIKAMI);
     fstream plikTekstowy;
-    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::out);
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::out);//nadpisanie pliku
     if (plikTekstowy.good() == true)
     {
         for (size_t i = 0; i<uzytkownicy.size(); i++)
