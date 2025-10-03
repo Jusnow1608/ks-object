@@ -1,2 +1,3 @@
 1|1|Magda|Nowak|543 5454 5432|jdaui@wp.pl|yrew grf trew t|
 2|3|Dominik|Szrajnert|567 765 65545|dszra@wp.pl|ul. Rzgowska 14/56 Lodz 94-344|
+3|1|Mariusz|Podlasek|123546 66565|fdgv|ttre  rew rew|
