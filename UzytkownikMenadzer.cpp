@@ -69,11 +69,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
     system ("pause");
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 void UzytkownikMenadzer::logowanieUzytkownika()
 {
     cout << "             >>> LOGOWANIE <<<" << endl;
