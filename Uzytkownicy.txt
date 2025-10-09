@@ -6,3 +6,7 @@
 6|Blazej|789|
 7|Grzegorz|123|
 8|Marek|345|
+9|Martyna|123|
+10|Gosia|1234|
+11|Malwina|345|
+12|Oskar|123|
