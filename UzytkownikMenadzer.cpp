@@ -69,11 +69,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
     system ("pause");
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 void UzytkownikMenadzer::logowanieUzytkownika()
 {
     cout << "             >>> LOGOWANIE <<<" << endl;
@@ -95,12 +90,12 @@ void UzytkownikMenadzer::logowanieUzytkownika()
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return ;
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return ;
+            return;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
@@ -142,11 +137,7 @@ void UzytkownikMenadzer::wylogowanieUzytkownika()
 bool UzytkownikMenadzer::czyUzytkownikZalogowany()
 {
     if (idZalogowanegoUzytkownika > 0)
-    {
         return true;
-    }
     else
-    {
         return false;
-    }
 }
