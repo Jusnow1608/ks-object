@@ -23,14 +23,14 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
     do
     {
         cout << "Podaj login: ";
-        cin>>login;
+        login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
     }
     while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
-    cin>>haslo;
+    haslo = MetodyPomocnicze::wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
@@ -75,7 +75,7 @@ void UzytkownikMenadzer::logowanieUzytkownika()
     cout << "-----------------------------------------------" << endl;
     string login = "", haslo = "";
     cout << "Podaj login: ";
-    cin>>login;
+    login = MetodyPomocnicze::wczytajLinie();
     for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
@@ -83,7 +83,7 @@ void UzytkownikMenadzer::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                cin>>haslo;
+                haslo = MetodyPomocnicze::wczytajLinie();
 
                 if(uzytkownicy[i].pobierzHaslo()==haslo)
                 {
@@ -104,11 +104,11 @@ void UzytkownikMenadzer::logowanieUzytkownika()
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
 {
-     cout << "             >>> ZMIANA HASLA <<<" << endl;
+    cout << "             >>> ZMIANA HASLA <<<" << endl;
     cout << "-----------------------------------------------" << endl;
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    cin >> noweHaslo;
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
     for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId()== idZalogowanegoUzytkownika)

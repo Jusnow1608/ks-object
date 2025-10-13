@@ -32,6 +32,9 @@ public:
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
     void wylogowanieUzytkownika();
+    bool czyUzytkownikZalogowany();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 };
 
 #endif

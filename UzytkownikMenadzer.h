@@ -34,7 +34,6 @@ public:
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    //void ustawIdZalogowanegoUzytkownika (int noweId);//czy potrzebna?
     int pobierzIdZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
     bool czyUzytkownikZalogowany();

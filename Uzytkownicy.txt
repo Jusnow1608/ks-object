@@ -1,5 +1,5 @@
-1|Justyna|Mama|
-2|Marta|456|
+1|Justyna|123|
+2|Marta|123|
 3|Dominik|12345|
 4|Kamil|456|
 5|Sylwia|12345%|
@@ -10,3 +10,17 @@
 10|Gosia|1234|
 11|Malwina|345|
 12|Oskar|123|
+13|Marietta|1234|
+14|Beata|123|
+15|Krystian|123|
+16|Jarek|123|
+17|Kornel|123|
+18|Mariusz|345|
+19|Franek|123|
+20|Janek|123|
+21|Norbert|123|
+22|Roman|123|
+23|Janina|123|
+24|Halina|123|
+25|Karolina|123|
+26|Elwira|1234|
