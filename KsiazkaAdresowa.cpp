@@ -107,6 +107,33 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     return wybor;
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+if(uzytkownikMenadzer.czyUzytkownikZalogowany())
+    {
+        adresatMenadzer->wyszukajAdresatowPoImieniu();
+    }
+    else
+    {
+        cout << "Aby wyszukac adresatow, musisz byc zalogowany." << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+if(uzytkownikMenadzer.czyUzytkownikZalogowany())
+    {
+        adresatMenadzer->wyszukajAdresatowPoNazwisku();
+    }
+    else
+    {
+        cout << "Aby wyszukac adresatow, musisz byc zalogowany." << endl;
+        system("pause");
+    }
+}
+
+
 
 
 

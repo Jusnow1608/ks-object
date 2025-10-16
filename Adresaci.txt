@@ -9,3 +9,5 @@
 9|2|Klaudia|Adamek|543 654 432|gff |ter re weq|
 10|26|Justyna|Nowak|543 43 3455|fdskd@wp.pl|geww ew rewq rewq|
 11|1|Damian|Skorupa|432 242 432|gfew@wp.pl|g ijml ik|
+12|1|Dominik|Mazur|543 543 654|jdidfho|gfnsd rejrw terwk|
+13|1|Magda|Pajak|543 654 65 43|thrweq|trew rweqtrew|

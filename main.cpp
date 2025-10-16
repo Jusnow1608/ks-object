@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int _main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
@@ -43,12 +43,12 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 ksiazkaAdresowa.dodajAdresata();
                 break;
-            /* case '2':
-                wyszukajAdresatowPoImieniu(adresaci);
+            case '2':
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                  break;
              case '3':
-                 wyszukajAdresatowPoNazwisku(adresaci);
-                 break;*/
+                 ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
@@ -81,12 +81,15 @@ int main()
 
 using namespace std;
 
-int TestyAdresatMenadzer_main()
+int main()
 {
-    AdresatMenadzer adresatMenadzer("Adresaci.txt",3);
+    AdresatMenadzer adresatMenadzer("Adresaci.txt",1);
     adresatMenadzer.wyswietlWszystkichAdresatow();
     adresatMenadzer.dodajAdresata();
-    adresatMenadzer.wyswietlWszystkichAdresatow();
+   // adresatMenadzer.wyswietlWszystkichAdresatow();
+    adresatMenadzer.wyszukajAdresatowPoImieniu();
+    adresatMenadzer.wyszukajAdresatowPoNazwisku();
+
 
     return 0;
 }
