@@ -133,6 +133,22 @@ if(uzytkownikMenadzer.czyUzytkownikZalogowany())
     }
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+if(uzytkownikMenadzer.czyUzytkownikZalogowany())
+    {
+        adresatMenadzer->usunAdresata();
+       // idUsunietegoAdresata = adresatMenadzer->usunAdresata();
+       // idOstatniegoAdresata = adresatMenadzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+       //adresatMenadzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(plikZAdresatami.pobierzIdUsunietegoAdresata(), plikZAdresatami.pobierzIdOstatniegoAdresata());
+    }
+    else
+    {
+        cout << "Aby usunac adresata, musisz byc zalogowany." << endl;
+        system("pause");
+    }
+}
+
 
 
 
