@@ -1,1 +1,2 @@
-8|1|Michal|Nowak|6543 543 654|jtrdds@wp.pl|ul. Gleboka 19, m. 56, Lodz 95-345|
+8|1|Grzegorz|Kowalski|6543 543 654|jtrdds@wp.pl|ul. Gleboka 19, m. 56, Lodz 95-345|
+11|1|Wojtek|Kowalski|6543 543 654|jtrdds@wp.pl|ul. Gleboka 19, m. 56, Lodz 95-345|

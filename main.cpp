@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int _main()
+int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
     char wybor;
@@ -45,19 +45,18 @@ int _main()
                 break;
             case '2':
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
-                 break;
-             case '3':
-                 ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
-                 break;
+                break;
+            case '3':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
-            /*case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
                 break;
-            case '6':
-               // edytujAdresata(adresaci);
+           /* case '6':
+                edytujAdresata(adresaci);
                 break;*/
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
@@ -73,23 +72,21 @@ int _main()
 }
 
 
-
-
 //Testy klasy AdresatMenadzer
 
 #include "AdresatMenadzer.h"
 
 using namespace std;
 
-int main()
+int  AdresatMenadzer_main()
 {
-    AdresatMenadzer adresatMenadzer("Adresaci.txt",1);
+    AdresatMenadzer adresatMenadzer("Adresaci-test.txt",1);
     adresatMenadzer.wyswietlWszystkichAdresatow();
     adresatMenadzer.dodajAdresata();
-   // adresatMenadzer.wyswietlWszystkichAdresatow();
-    adresatMenadzer.wyszukajAdresatowPoImieniu();
-    adresatMenadzer.wyszukajAdresatowPoNazwisku();
-
+    adresatMenadzer.wyswietlWszystkichAdresatow();
+    //adresatMenadzer.wyszukajAdresatowPoImieniu();
+    //adresatMenadzer.wyszukajAdresatowPoNazwisku();
+    adresatMenadzer.usunAdresata();
 
     return 0;
 }
@@ -99,13 +96,15 @@ int main()
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 
-int TestyPlikZAdresatami_main()
+int PlikZAdresatami_main()
 {
     PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
-    Adresat adresat(8,1, "Michal", "Nowak","6543 543 654", "jtrdds@wp.pl", "ul. Gleboka 19, m. 56, Lodz 95-345");
+    Adresat adresat(11,1, "Wojtek", "Kowalski","6543 543 654", "jtrdds@wp.pl", "ul. Gleboka 19, m. 56, Lodz 95-345");
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
     plikZAdresatami.pobierzAdresatowZalogowanegoUzytkownikaZPliku(1);
-    cout<<plikZAdresatami.pobierzIdOstatniegoAdresata();
+    cout<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
+    plikZAdresatami.usunAdresataZPliku(10);
+
 
     return 0;
 }
