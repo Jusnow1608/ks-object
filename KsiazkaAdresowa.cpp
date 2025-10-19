@@ -17,7 +17,7 @@ void KsiazkaAdresowa::logowanieUzytkownika()
 
     if (uzytkownikMenadzer.czyUzytkownikZalogowany())
     {
-        adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+        adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI, NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 
@@ -138,9 +138,6 @@ void KsiazkaAdresowa::usunAdresata()
 if(uzytkownikMenadzer.czyUzytkownikZalogowany())
     {
         adresatMenadzer->usunAdresata();
-       // idUsunietegoAdresata = adresatMenadzer->usunAdresata();
-       // idOstatniegoAdresata = adresatMenadzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
-       //adresatMenadzer->podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(plikZAdresatami.pobierzIdUsunietegoAdresata(), plikZAdresatami.pobierzIdOstatniegoAdresata());
     }
     else
     {

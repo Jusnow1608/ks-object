@@ -147,13 +147,12 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
-    string nazwaTymczasowegoPlikuZAdresatami = "Adresaci-tymczasowy.txt";
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     bool czyToPierwszaZapisanaLinia = true;
     bool czyAdresatZostalUsuniety = false;
 
     odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
-    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out);
+    tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out);
 
     if (odczytywanyPlikTekstowy.good() == true && idUsuwanegoAdresata != 0)
     {
@@ -182,12 +181,12 @@ void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata)
         if (czyAdresatZostalUsuniety == true)
         {
             usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
-            zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
+            zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, NAZWA_PLIKU_Z_ADRESATAMI);
             idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata, idOstatniegoAdresata);
         }
         else
         {
-            usunPlik(nazwaTymczasowegoPlikuZAdresatami);
+            usunPlik(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI);
         }
     }
 }
