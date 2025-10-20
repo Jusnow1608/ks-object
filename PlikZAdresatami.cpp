@@ -161,15 +161,7 @@ void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata)
             int idOdczytanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
             if(idOdczytanegoAdresata != idUsuwanegoAdresata)
             {
-                if (czyToPierwszaZapisanaLinia)
-                {
-                    tymczasowyPlikTekstowy << wczytanaLinia;
-                    czyToPierwszaZapisanaLinia = false;
-                }
-                else
-                {
-                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
-                }
+                zapiszLinieDoPliku(tymczasowyPlikTekstowy, wczytanaLinia, czyToPierwszaZapisanaLinia);
             }
             else
                 czyAdresatZostalUsuniety = true;
@@ -208,27 +200,12 @@ void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat)
             int idOdczytanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
             if(idOdczytanegoAdresata != adresat.pobierzId())
             {
-                if (czyToPierwszaZapisanaLinia)
-                {
-                    tymczasowyPlikTekstowy << wczytanaLinia;
-                    czyToPierwszaZapisanaLinia = false;
-                }
-                else
-                {
-                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
-                }
+                zapiszLinieDoPliku(tymczasowyPlikTekstowy, wczytanaLinia, czyToPierwszaZapisanaLinia);
             }
             else
             {
-                if(czyToPierwszaZapisanaLinia)
-                {
-                    tymczasowyPlikTekstowy << zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-                    czyToPierwszaZapisanaLinia = false;
-                }
-                else
-                {
-                    tymczasowyPlikTekstowy << endl << zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-                }
+                string nowaLinia = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+                zapiszLinieDoPliku(tymczasowyPlikTekstowy, nowaLinia, czyToPierwszaZapisanaLinia);
                 czyAdresatZostalZedytowany = true;
             }
         }
@@ -300,5 +277,18 @@ int PlikZAdresatami::podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int i
         return pobierzZPlikuIdOstatniegoAdresata();
     else
         return idOstatniegoAdresata;
+}
+
+void PlikZAdresatami::zapiszLinieDoPliku(fstream& plik, const string& linia, bool& czyToPierwszaZapisanaLinia)
+{
+    if (czyToPierwszaZapisanaLinia)
+    {
+        plik << linia;
+        czyToPierwszaZapisanaLinia = false;
+    }
+    else
+    {
+        plik << endl << linia;
+    }
 }
 

@@ -28,27 +28,11 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     adresat.ustawId (plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
-    cout << "Podaj imie: ";
-    imie = MetodyPomocnicze::wczytajLinie();
-    imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
-    adresat.ustawImie(imie);
-
-    cout << "Podaj nazwisko: ";
-    nazwisko = MetodyPomocnicze::wczytajLinie();
-    nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
-    adresat.ustawNazwisko (nazwisko);
-
-    cout << "Podaj numer telefonu: ";
-    numerTelefonu = MetodyPomocnicze::wczytajLinie();
-    adresat.ustawNumerTelefonu (numerTelefonu);
-
-    cout << "Podaj email: ";
-    email = MetodyPomocnicze::wczytajLinie();
-    adresat.ustawEmail (email);
-
-    cout << "Podaj adres: ";
-    adres = MetodyPomocnicze::wczytajLinie();
-    adresat.ustawAdres (adres);
+    adresat.ustawImie(wczytajNowaWartosc("Podaj imie: ", true));
+    adresat.ustawNazwisko(wczytajNowaWartosc("Podaj nazwisko: ", true));
+    adresat.ustawNumerTelefonu(wczytajNowaWartosc("Podaj numer telefonu: ", false));
+    adresat.ustawEmail(wczytajNowaWartosc("Podaj email: ", false));
+    adresat.ustawAdres(wczytajNowaWartosc("Podaj adres zamieszkania: ", false));
 
     return adresat;
 }
@@ -227,48 +211,31 @@ void AdresatMenadzer::edytujAdresata()
             switch (wybor)
             {
             case '1':
-                cout << "Podaj nowe imie: ";
-                imie = MetodyPomocnicze::wczytajLinie();
-                imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
-                adresaci[i].ustawImie(imie);
-                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                adresaci[i].ustawImie(wczytajNowaWartosc("Podaj nowe imie: ", true));
                 break;
             case '2':
-                cout << "Podaj nowe nazwisko: ";
-                nazwisko = MetodyPomocnicze::wczytajLinie();
-                nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
-                adresaci[i].ustawNazwisko(nazwisko);
-                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                adresaci[i].ustawNazwisko(wczytajNowaWartosc("Podaj nowe nazwisko: ", true));
                 break;
             case '3':
-                cout << "Podaj nowy numer telefonu: ";
-                numerTelefonu = MetodyPomocnicze::wczytajLinie();
-                adresaci[i].ustawNumerTelefonu(numerTelefonu);
-                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                adresaci[i].ustawNumerTelefonu(wczytajNowaWartosc("Podaj nowy numer telefonu: ", false));
                 break;
             case '4':
-                cout << "Podaj nowy email: ";
-                email = MetodyPomocnicze::wczytajLinie();
-                adresaci[i].ustawEmail(email);
-                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                adresaci[i].ustawEmail(wczytajNowaWartosc("Podaj nowy email: ", false));
                 break;
             case '5':
-                cout << "Podaj nowy adres zamieszkania: ";
-                adres = MetodyPomocnicze::wczytajLinie();
-                adresaci[i].ustawAdres(adres);
-                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                adresaci[i].ustawAdres(wczytajNowaWartosc("Podaj nowy adres zamieszkania: ", false));
                 break;
             case '6':
                 cout << endl << "Powrot do menu uzytkownika" << endl << endl;
-                break;
+                return;
             default:
                 cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
-                break;
+                return;
             }
+            zaktualizujDaneWybranegoAdresata(adresaci[i]);
+            break;
         }
     }
-
-
     if (czyIstniejeAdresat == false)
     {
         cout << endl << "Nie ma takiego adresata." << endl << endl;
@@ -301,6 +268,18 @@ void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     plikZAdresatami.edytujAdresataWPliku(adresat);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
+}
+
+string AdresatMenadzer::wczytajNowaWartosc(string komunikat, bool zmianaPierwszejLiteryNaDuza)
+{
+    cout << komunikat;
+    string wartosc;
+    wartosc = MetodyPomocnicze::wczytajLinie();
+
+    if (zmianaPierwszejLiteryNaDuza)
+        wartosc = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(wartosc);
+
+    return wartosc;
 }
 
 

@@ -22,6 +22,7 @@ class AdresatMenadzer
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    string wczytajNowaWartosc(string komunikat, bool zmianaPierwszejLiteryNaDuza);
 
 public:
     AdresatMenadzer(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int idZalogowanegoUzytkownika):
