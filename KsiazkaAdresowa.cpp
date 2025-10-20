@@ -146,6 +146,19 @@ if(uzytkownikMenadzer.czyUzytkownikZalogowany())
     }
 }
 
+void KsiazkaAdresowa::edytujAdresata()
+{
+if(uzytkownikMenadzer.czyUzytkownikZalogowany())
+    {
+        adresatMenadzer->edytujAdresata();
+    }
+    else
+    {
+        cout << "Aby edytowac adresata, musisz byc zalogowany." << endl;
+        system("pause");
+    }
+}
+
 
 
 
