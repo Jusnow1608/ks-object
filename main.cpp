@@ -55,9 +55,9 @@ int main()
             case '5':
                 ksiazkaAdresowa.usunAdresata();
                 break;
-           /* case '6':
-                edytujAdresata(adresaci);
-                break;*/
+            case '6':
+                ksiazkaAdresowa.edytujAdresata();
+                break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
@@ -82,11 +82,12 @@ int  AdresatMenadzer_main()
 {
     AdresatMenadzer adresatMenadzer("Adresaci-test.txt", "Adresaci-tymczasowy-test.txt",1);
     adresatMenadzer.wyswietlWszystkichAdresatow();
-    adresatMenadzer.dodajAdresata();
+    //adresatMenadzer.dodajAdresata();
     adresatMenadzer.wyswietlWszystkichAdresatow();
     //adresatMenadzer.wyszukajAdresatowPoImieniu();
     //adresatMenadzer.wyszukajAdresatowPoNazwisku();
-    adresatMenadzer.usunAdresata();
+    //adresatMenadzer.usunAdresata();
+    adresatMenadzer.edytujAdresata();
 
     return 0;
 }
@@ -99,11 +100,14 @@ int  AdresatMenadzer_main()
 int PlikZAdresatami_main()
 {
     PlikZAdresatami plikZAdresatami("Adresaci-test.txt", "Adresaci-tymczasowy-test.txt");
-    Adresat adresat(11,1, "Wojtek", "Kowalski","6543 543 654", "jtrdds@wp.pl", "ul. Gleboka 19, m. 56, Lodz 95-345");
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    // plikZAdresatami.dopiszAdresataDoPliku(adresat);
     plikZAdresatami.pobierzAdresatowZalogowanegoUzytkownikaZPliku(1);
-    cout<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
-    plikZAdresatami.usunAdresataZPliku(10);
+    // cout<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
+    //plikZAdresatami.usunAdresataZPliku(10);
+    Adresat adresat(8,1, "Grzesiek", "Kowalski","6543 543 654", "jtrdds@wp.pl", "ul. Gleboka 19, m. 56, Lodz 95-345");
+    plikZAdresatami.edytujAdresataWPliku(adresat);
+
+
 
 
     return 0;
