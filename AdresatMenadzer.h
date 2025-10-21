@@ -17,11 +17,11 @@ class AdresatMenadzer
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     Adresat podajDaneNowegoAdresata();
-    void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlDaneAdresata(Adresat& adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
-    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    void zaktualizujDaneWybranegoAdresata(Adresat& adresat);
     string wczytajNowaWartosc(string komunikat, bool zmianaPierwszejLiteryNaDuza);
 
 public:

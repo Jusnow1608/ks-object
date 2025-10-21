@@ -1,3 +1,0 @@
-8|1|Grzesiek|Kowalski|6543 543 654|jtrdds@wp.pl|u. Niska 20, m. 34, Warszawa 90-435|
-11|1|Wojtek|Kowalski|6543 543 654|jtrdds@wp.pl|ul. Gleboka 19, m. 56, Lodz 95-345|
-12|1|Michal|Kowal|6543 543 654|jtrdds@wp.pl|ul. Gleboka 19, m. 56, Lodz 95-345|

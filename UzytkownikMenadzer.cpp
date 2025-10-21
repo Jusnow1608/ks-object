@@ -25,13 +25,21 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
         cout << "Podaj login: ";
         login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
+        if (login.empty())
+            cout << "Login nie moze byc pusty." << endl;
     }
-    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) || login.empty());
 
     string haslo;
-    cout << "Podaj haslo: ";
-    haslo = MetodyPomocnicze::wczytajLinie();
-    uzytkownik.ustawHaslo(haslo);
+    do
+    {
+        cout << "Podaj haslo: ";
+        haslo = MetodyPomocnicze::wczytajLinie();
+        uzytkownik.ustawHaslo(haslo);
+        if (haslo.empty())
+            cout << "Haslo nie moze byc puste." << endl;
+    }
+    while(haslo.empty());
 
     return uzytkownik;
 }
@@ -50,10 +58,9 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
     {
         if (uzytkownicy[i].pobierzLogin()==login)
         {
-            cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
+            cout << "Istnieje uzytkownik o takim loginie." << endl;
             return true;
         }
-
     }
     return false;
 }
@@ -62,9 +69,10 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
     for (size_t i=0; i<uzytkownicy.size(); i++)
     {
-        cout<<uzytkownicy[i].pobierzId()<<endl;
-        cout<<uzytkownicy[i].pobierzLogin()<<endl;
-        cout<<uzytkownicy[i].pobierzHaslo()<<endl;
+        cout<<"Id:    "<<uzytkownicy[i].pobierzId()<<endl;
+        cout<<"Login: "<<uzytkownicy[i].pobierzLogin()<<endl;
+        cout<<"Haslo: "<<uzytkownicy[i].pobierzHaslo()<<endl;
+        cout<<endl;
     }
     system ("pause");
 }
@@ -107,8 +115,15 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
     cout << "             >>> ZMIANA HASLA <<<" << endl;
     cout << "-----------------------------------------------" << endl;
     string noweHaslo = "";
-    cout << "Podaj nowe haslo: ";
-    noweHaslo = MetodyPomocnicze::wczytajLinie();
+    do
+    {
+        cout << "Podaj nowe haslo: ";
+        noweHaslo = MetodyPomocnicze::wczytajLinie();
+        if (noweHaslo.empty())
+            cout << "Haslo nie moze byc puste." << endl;
+    }
+    while (noweHaslo.empty());
+
     for (size_t i=0; i<uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId()== idZalogowanegoUzytkownika)
