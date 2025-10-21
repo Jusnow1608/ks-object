@@ -21,7 +21,7 @@ string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst
 string MetodyPomocnicze::wczytajLinie()
 {
     string wejscie = "";
-    getline(cin >> ws, wejscie);
+    getline(cin, wejscie);
     return wejscie;
 }
 

@@ -1,8 +1,6 @@
 #include <iostream>
 #include "KsiazkaAdresowa.h"
 
-using namespace std;
-
 int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Adresaci-tymczasowy.txt");
@@ -82,11 +80,10 @@ int  AdresatMenadzer_main()
 {
     AdresatMenadzer adresatMenadzer("Adresaci-test.txt", "Adresaci-tymczasowy-test.txt",1);
     adresatMenadzer.wyswietlWszystkichAdresatow();
-    //adresatMenadzer.dodajAdresata();
-    adresatMenadzer.wyswietlWszystkichAdresatow();
-    //adresatMenadzer.wyszukajAdresatowPoImieniu();
-    //adresatMenadzer.wyszukajAdresatowPoNazwisku();
-    //adresatMenadzer.usunAdresata();
+    adresatMenadzer.dodajAdresata();
+    adresatMenadzer.wyszukajAdresatowPoImieniu();
+    adresatMenadzer.wyszukajAdresatowPoNazwisku();
+    adresatMenadzer.usunAdresata();
     adresatMenadzer.edytujAdresata();
 
     return 0;
@@ -100,15 +97,12 @@ int  AdresatMenadzer_main()
 int PlikZAdresatami_main()
 {
     PlikZAdresatami plikZAdresatami("Adresaci-test.txt", "Adresaci-tymczasowy-test.txt");
-    // plikZAdresatami.dopiszAdresataDoPliku(adresat);
-    plikZAdresatami.pobierzAdresatowZalogowanegoUzytkownikaZPliku(1);
-    // cout<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
-    //plikZAdresatami.usunAdresataZPliku(10);
     Adresat adresat(8,1, "Grzesiek", "Kowalski","6543 543 654", "jtrdds@wp.pl", "ul. Gleboka 19, m. 56, Lodz 95-345");
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.pobierzAdresatowZalogowanegoUzytkownikaZPliku(1);
+    cout<<plikZAdresatami.pobierzIdOstatniegoAdresata()<<endl;
+    plikZAdresatami.usunAdresataZPliku(8);
     plikZAdresatami.edytujAdresataWPliku(adresat);
-
-
-
 
     return 0;
 }

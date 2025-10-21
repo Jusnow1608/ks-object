@@ -26,7 +26,7 @@ public:
     {
         delete adresatMenadzer;
         adresatMenadzer = NULL;
-    };
+    }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();

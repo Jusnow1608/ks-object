@@ -57,7 +57,7 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
     system("pause");
 }
 
-void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat)
+void AdresatMenadzer::wyswietlDaneAdresata(Adresat& adresat)
 {
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
@@ -263,7 +263,7 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja()
     return wybor;
 }
 
-void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
+void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat& adresat)
 {
     plikZAdresatami.edytujAdresataWPliku(adresat);
 
@@ -272,10 +272,17 @@ void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 
 string AdresatMenadzer::wczytajNowaWartosc(string komunikat, bool zmianaPierwszejLiteryNaDuza)
 {
-    cout << komunikat;
     string wartosc;
-    wartosc = MetodyPomocnicze::wczytajLinie();
-
+    do
+    {
+        cout << komunikat;
+        wartosc = MetodyPomocnicze::wczytajLinie();
+        if(wartosc.empty())
+            cout << "Wartosc nie moze byc pusta. " << endl;
+    }
+    while (wartosc.empty());
+    {
+    }
     if (zmianaPierwszejLiteryNaDuza)
         wartosc = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(wartosc);
 
